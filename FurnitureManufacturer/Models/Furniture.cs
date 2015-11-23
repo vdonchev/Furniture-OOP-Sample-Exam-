@@ -71,11 +71,14 @@
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(value), "Furniture length can't be 0 or negative number");
+                    throw new ArgumentOutOfRangeException(nameof(value), "Furniture height can't be 0 or negative number");
                 }
 
                 this.height = value;
             }
         }
+
+        public override string ToString() =>
+            $"Type: {this.GetType().Name}, Model: {this.Model}, Material: {this.Material}, Price: {this.Price}, Height: {this.Height}";
     }
 }

@@ -13,6 +13,6 @@
         public int NumberOfLegs { get; }
 
         public override string ToString() =>
-            $"Type: {this.GetType().Name}, Model: {this.Model}, Material: {this.Material}, Price: {this.Price}, Height: {this.Height}, Legs: {this.NumberOfLegs}";
+            $"{base.ToString()}, Legs: {this.NumberOfLegs}";
     }
 }

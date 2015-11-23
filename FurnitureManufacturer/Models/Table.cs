@@ -19,7 +19,7 @@
             this.CalculateArea();
 
         public override string ToString() =>
-            $"Type: {this.GetType().Name}, Model: {this.Model}, Material: {this.Material}, Price: {this.Price}, Height: {this.Height}, Length: {this.Length}, Width: {this.Width}, Area: {this.Area}";
+            $"{base.ToString()}, Width: {this.Width}, Area: {this.Area}";
 
         private decimal CalculateArea() =>
             this.Length * this.Width;
