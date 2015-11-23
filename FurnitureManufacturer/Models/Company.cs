@@ -9,6 +9,8 @@
 
     public class Company : ICompany
     {
+        private const int MinCompanyNameLength = 5;
+
         private string name;
         private string registrationNumber;
 
@@ -29,16 +31,8 @@
 
             private set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("Company name can't be null or empty.", nameof(value));
-                }
-
-                if (value.Length < 5)
-                {
-                    throw new ArgumentException("Company name can't be less than 5 characters.", nameof(value));
-                }
-
+                Validators.ValidateNullEmpty(value, "Company name");
+                Validators.ValidateLength(value, MinCompanyNameLength, "Company name");
                 this.name = value;
             }
         }
@@ -52,16 +46,8 @@
 
             private set
             {
-                if (value == null)
-                {
-                    throw new ArgumentNullException(nameof(value), "Company registration number can't be null.");
-                }
-
-                if (value.Trim().Length != 10 || !IsOnlyDigits(value))
-                {
-                    throw new ArgumentException("Company registraion number should be eaxctly 10 synbols and must contain only digits.");
-                }
-
+                Validators.ValidateNull(value, "Company registration number");
+                ValidateCompanyNumber(value);
                 this.registrationNumber = value;
             }
         }
@@ -91,6 +77,14 @@
             }
 
             return catalog.ToString();
+        }
+
+        private static void ValidateCompanyNumber(string value)
+        {
+            if (value.Trim().Length != 10 || !IsOnlyDigits(value))
+            {
+                throw new ArgumentException(ModelConstants.CompanyNumberError, nameof(value));
+            }
         }
 
         private static bool IsOnlyDigits(string regNum) =>

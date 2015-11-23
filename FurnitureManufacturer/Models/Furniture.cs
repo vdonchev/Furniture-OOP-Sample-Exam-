@@ -5,6 +5,8 @@
 
     public abstract class Furniture : IFurniture
     {
+        private const int MinModelLength = 3;
+
         private string model;
         private decimal price;
         private decimal height;
@@ -26,16 +28,8 @@
 
             private set
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("Furniture model can't be null or empty.", nameof(value));
-                }
-
-                if (value.Trim().Length < 3)
-                {
-                    throw new ArgumentException("Furniture model can't be less than 3 symbols.", nameof(value));
-                }
-
+                Validators.ValidateNullEmpty(value, "Furniture model");
+                Validators.ValidateLength(value, MinModelLength, "Furniture model");
                 this.model = value;
             }
         }
@@ -51,11 +45,7 @@
 
             set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(value), "Furniture price can't be 0 or negative number");
-                }
-
+                Validators.ValidatePositiveNum(value, "Furniture model price");
                 this.price = value;
             }
         }
@@ -69,11 +59,7 @@
 
             protected set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(value), "Furniture height can't be 0 or negative number");
-                }
-
+                Validators.ValidatePositiveNum(value, "Furniture height");
                 this.height = value;
             }
         }

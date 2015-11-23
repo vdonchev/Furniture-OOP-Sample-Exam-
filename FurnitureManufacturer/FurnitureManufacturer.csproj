@@ -65,7 +65,9 @@
     <Compile Include="Interfaces\Engine\IFurnituresManufacturerEngine.cs" />
     <Compile Include="Interfaces\ITable.cs" />
     <Compile Include="Models\AdjustableChair.cs" />
+    <Compile Include="Models\ModelConstants.cs" />
     <Compile Include="Models\Table.cs" />
+    <Compile Include="Models\Validators.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
