@@ -87,7 +87,6 @@
             }
         }
 
-        private static bool IsOnlyDigits(string regNum) =>
-            Regex.IsMatch(regNum, @"\d{10}");
+        private static bool IsOnlyDigits(string regNum) => Regex.IsMatch(regNum, @"\d{10}");
     }
 }

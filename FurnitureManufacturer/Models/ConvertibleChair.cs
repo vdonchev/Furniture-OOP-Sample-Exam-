@@ -30,7 +30,6 @@
             this.IsConverted = !this.IsConverted;
         }
 
-        public override string ToString() =>
-            $"{base.ToString()}, State: {(this.IsConverted ? "Converted" : "Normal")}";
+        public override string ToString() => $"{base.ToString()}, State: {(this.IsConverted ? "Converted" : "Normal")}";
     }
 }

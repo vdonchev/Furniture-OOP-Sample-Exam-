@@ -1,6 +1,5 @@
 ﻿namespace FurnitureManufacturer.Models
 {
-    using System;
     using Interfaces;
 
     public abstract class Furniture : IFurniture

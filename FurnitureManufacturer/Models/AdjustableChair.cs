@@ -8,7 +8,6 @@
         {
         }
 
-        public void SetHeight(decimal height) =>
-            this.Height = height;
+        public void SetHeight(decimal height) => this.Height = height;
     }
 }

@@ -15,13 +15,10 @@
 
         public decimal Width { get; }
 
-        public decimal Area =>
-            this.CalculateArea();
+        public decimal Area => this.CalculateArea();
 
-        public override string ToString() =>
-            $"{base.ToString()}, Width: {this.Width}, Area: {this.Area}";
+        public override string ToString() => $"{base.ToString()}, Width: {this.Width}, Area: {this.Area}";
 
-        private decimal CalculateArea() =>
-            this.Length * this.Width;
+        private decimal CalculateArea() => this.Length * this.Width;
     }
 }

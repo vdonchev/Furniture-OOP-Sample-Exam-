@@ -12,7 +12,6 @@
 
         public int NumberOfLegs { get; }
 
-        public override string ToString() =>
-            $"{base.ToString()}, Legs: {this.NumberOfLegs}";
+        public override string ToString() => $"{base.ToString()}, Legs: {this.NumberOfLegs}";
     }
 }
